@@ -15,7 +15,7 @@ export const Route = createFileRoute('/admin/_admin')({
   component: LayoutComponent,
 });
 
-function LayoutComponent() {
+export function LayoutComponent() {
   const [route, setRoute] = useState<string>('/admin/xpub');
   const { pathname } = useLocation();
 
