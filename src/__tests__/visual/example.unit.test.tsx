@@ -3,7 +3,6 @@ import { chromium } from 'playwright';
 import { Xpub } from '@/routes/admin/_admin.xpub.tsx';
 import { render } from '../../../test-utils.tsx';
 import * as routerHooks from '@tanstack/react-router';
-import { act } from '@testing-library/react';
 
 beforeAll(() => {
   Object.defineProperty(window, 'matchMedia', {
@@ -38,6 +37,7 @@ test('example testing 2 ', async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
+  await page.addStyleTag({path: './src/index.css'});
   await page.setContent(container.innerHTML);
 
   const screenshot = await page.screenshot({ fullPage: true });
