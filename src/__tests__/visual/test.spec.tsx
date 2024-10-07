@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/experimental-ct-react';
 import { Xpub } from '@/routes/admin/_admin.xpub.tsx';
 import { chromium, devices } from '@playwright/test';
 
-test('First Test of the component', async ({ mount, page }) => {
+test('First Test of the component', async ({ mount }) => {
   // Setup
   const browser = await chromium.launch();
   const context = await browser.newContext(devices['iPhone 11']);
